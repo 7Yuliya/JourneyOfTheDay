@@ -67,5 +67,10 @@ public class CreditGate {
         wrongFormatFields.shouldHaveSize(4);
         requiredField.should(visible, Duration.ofSeconds(15));
     }
+
+    public void getRequiredField() {
+        requiredField.should(visible, Duration.ofSeconds(15));
+    }
 }
+
 

@@ -109,7 +109,7 @@ public class CreditGateTest {
     }
 
     @Test
-    void shouldCreditGateNegativeInvalidDataMonthFor0Before10Digit() {
+    void shouldCreditGateNegativeInvalidDataMonthFor0Before10DigitMoreCurrentYear() {
         var startPage = new PaymentPage();
         var payment = startPage.creditPage();
         payment.dataInField(DataHelper.getMonthFrom0Before9Digits());
@@ -222,7 +222,7 @@ public class CreditGateTest {
         var startPage = new PaymentPage();
         var payment = startPage.creditPage();
         payment.dataInField(DataHelper.getHolderCardEmptyField());
-        payment.getWrongFormat();
+        payment.getRequiredField();
         assertEquals("0", SqlHelper.getOrderCount());
     }
 

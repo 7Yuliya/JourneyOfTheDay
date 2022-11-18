@@ -52,7 +52,8 @@ public class PaymentGate {
     }
 
     public void getWrongFormat() {
-        wrongFormat.should(visible, Duration.ofSeconds(15));}
+        wrongFormat.should(visible, Duration.ofSeconds(15));
+    }
 
     public void getWrongValidityPeriodCard() {
         wrongValidityPeriodCard.should(visible, Duration.ofSeconds(15));
@@ -64,6 +65,10 @@ public class PaymentGate {
 
     public void getWrongFormatFields() {
         wrongFormatFields.shouldHaveSize(4);
+        requiredField.should(visible, Duration.ofSeconds(15));
+    }
+
+    public void getRequiredField() {
         requiredField.should(visible, Duration.ofSeconds(15));
     }
 }

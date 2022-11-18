@@ -109,7 +109,7 @@ public class PaymentGateTest {
     }
 
     @Test
-    void shouldPaymentGateNegativeInvalidDataMonthFor0Before10Digit() {
+    void shouldPaymentGateNegativeInvalidDataMonthFor0Before10DigitMoreCurrentYear() {
         var startPage = new PaymentPage();
         var payment = startPage.buyPage();
         payment.dataInField(DataHelper.getMonthFrom0Before9Digits());
@@ -223,7 +223,7 @@ public class PaymentGateTest {
         var startPage = new PaymentPage();
         var payment = startPage.buyPage();
         payment.dataInField(DataHelper.getHolderCardEmptyField());
-        payment.getWrongFormat();
+        payment.getRequiredField();
         assertEquals("0", SqlHelper.getOrderCount());
     }
 

@@ -145,7 +145,7 @@ public class DataHelper {
     public static Card getYearLessThan22Digits() {
         Faker faker = new Faker();
         String month = getNextMonth();
-        String year = faker.number().digit();
+        String year = getNextYear(-3);
         String holderCard = faker.name().firstName() + " " + faker.name().lastName();
         String cvc = faker.number().digits(3);
         return new Card("4444444444444441", month, year, holderCard, cvc);
@@ -190,7 +190,7 @@ public class DataHelper {
         Faker faker = new Faker();
         String month = getNextMonth();
         String year = getNextYear(1);
-        String holderCard = faker.name().firstName() + " " + faker.number().digit();
+        String holderCard = faker.number().digit();
         String cvc = faker.number().digits(3);
         return new Card("4444444444444441", month, year, holderCard, cvc);
     }
@@ -199,7 +199,7 @@ public class DataHelper {
         Faker faker = new Faker();
         String month = getNextMonth();
         String year = getNextYear(1);
-        String holderCard = faker.name().firstName() + "%";
+        String holderCard = "%";
         String cvc = faker.number().digits(3);
         return new Card("4444444444444441", month, year, holderCard, cvc);
     }
