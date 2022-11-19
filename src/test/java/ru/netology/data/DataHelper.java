@@ -244,8 +244,7 @@ public class DataHelper {
         String month = getNextMonth();
         String year = getNextYear(2);
         String holderCard = faker.name().firstName() + " " + faker.name().lastName();
-        String cvc = faker.number().digits(000);
-        return new Card("4444444444444441", month, year, holderCard, cvc);
+        return new Card("4444444444444441", month, year, holderCard, "000");
     }
 
     public static Card getCvcEmptyField() {

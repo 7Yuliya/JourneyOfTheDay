@@ -247,7 +247,7 @@ public class CreditGateTest {
     @Test
     void shouldCreditGateNegativeInvalidDataCvc000Digit() {
         var startPage = new PaymentPage();
-        var payment = startPage.buyPage();
+        var payment = startPage.creditPage();
         payment.dataInField(DataHelper.getCvc000Digits());
         payment.getWrongFormat();
         assertEquals("0", SqlHelper.getOrderCount());
